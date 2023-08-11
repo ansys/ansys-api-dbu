@@ -1,7 +1,7 @@
 ### ansys-api-dbu gRPC Interface Package
 
 This repository provides the auto-generated gRPC Python interface files for
-the Ansys Dbu Service.
+the Ansys DBU Service.
 
 
 #### Installation
