@@ -46,13 +46,13 @@ jobs:
           cd tmp
           python -c "import ansys.api.dbu.v0; print('Successfully imported ansys.api.dbu.v0')"
           python -c "from ansys.api.dbu import __version__; print(__version__)"
-          python -c "import ansys.api.geometry.v0; print('Successfully imported ansys.api.geometry.v0')"
-          python -c "from ansys.api.geometry import __version__; print(__version__)"
+          python -c "import ansys.api.dbu.v0; print('Successfully imported ansys.api.dbu.v0')"
+          python -c "from ansys.api.dbu import __version__; print(__version__)"
 
       - name: Upload packages
         uses: actions/upload-artifact@v3
         with:
-          name: ansys-api-geometry-packages
+          name: ansys-api-dbu-packages
           path: dist/
           retention-days: 7
 
