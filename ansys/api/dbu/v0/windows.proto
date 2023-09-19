@@ -1,0 +1,29 @@
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+syntax = "proto3";
+package ansys.api.dbu.v0.windows;
+
+import "ansys/api/dbu/v0/dbumodels.proto";
+import "ansys/api/dbu/v0/streaming.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Ansys.Api.Dbu.V0.Windows";
+
+// Windows
+//
+service Windows{
+  // Gets an image for the active window. 
+  rpc GetImage(GetImageRequest) returns(stream StreamPackage);
+
+  // Sets the camera view for the active window. 
+  rpc SetView(SetViewRequest) returns(google.protobuf.Empty);
+}
+
+message GetImageRequest{
+  // The format of the image being requested.
+  ImageFormat format = 1;
+} 
+
+message SetViewRequest{
+  // The view operation being requested.
+  WindowView view = 1;
+}
