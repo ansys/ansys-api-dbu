@@ -1,4 +1,4 @@
-// ©2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
 syntax = "proto3";
 
 package ansys.api.dbu.v0.dbuapplication;
@@ -9,6 +9,10 @@ service DbuApplication {
 
   // Runs a script based on a file.
   rpc RunScriptFile(RunScriptFileRequest) returns(RunScriptFileResponse);
+
+  // Runs a script based on a file without having it recorded by feature tracking.
+  // ATTENTION! Changing geometry within a not tracked would corrupt the feature's tracking state.
+  rpc RunNotTrackedScriptFile(RunScriptFileRequest) returns(RunScriptFileResponse);
 
   // Runs a script based on a supplied string.
   rpc RunScript(RunScriptRequest) returns(RunScriptResponse);

@@ -1,4 +1,4 @@
-// ©2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
 syntax = "proto3";
 package ansys.api.dbu.v0.designs;
 
@@ -29,6 +29,8 @@ service Designs{
   rpc Insert(InsertRequest) returns(EntityIdentifier);
 
   rpc GetAsJson(GetAsJsonRequest) returns(GetAsJsonResponse);
+
+  rpc CopyReferencedDocuments(CopyReferencedDocumentsRequest) returns(RequestResult);
 }
 
 message GetAllResponse{
@@ -37,6 +39,7 @@ message GetAllResponse{
 
 message OpenRequest{
   string filepath = 1;
+  map<string,bool> import_options = 2;
 }
 
 message NewRequest{
@@ -56,4 +59,9 @@ message GetAsJsonRequest {
 }
 message GetAsJsonResponse {
   string json=1;
+}
+
+message CopyReferencedDocumentsRequest {
+  EntityIdentifier document_id = 1;
+  string output_path=2;
 }
