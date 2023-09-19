@@ -1,0 +1,67 @@
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+syntax = "proto3";
+package ansys.api.dbu.v0.designs;
+
+import "ansys/api/dbu/v0/dbumodels.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Ansys.Api.Dbu.V0.Designs";
+
+service Designs{
+  rpc Get(EntityIdentifier) returns(Design);
+
+  rpc GetAll(google.protobuf.Empty) returns(GetAllResponse) ;
+  
+  rpc GetActive(google.protobuf.Empty) returns(Design) ;
+
+  rpc PutActive(EntityIdentifier) returns(google.protobuf.Empty);
+
+  rpc Open(OpenRequest) returns(EntityIdentifier);
+
+  rpc New(NewRequest) returns(Design) ;
+
+  rpc Close(EntityIdentifier) returns(google.protobuf.Empty);
+
+  rpc Save(EntityIdentifier) returns(google.protobuf.Empty) ;
+
+  rpc SaveAs(SaveAsRequest) returns(EntityIdentifier);
+
+  rpc Insert(InsertRequest) returns(EntityIdentifier);
+
+  rpc GetAsJson(GetAsJsonRequest) returns(GetAsJsonResponse);
+
+  rpc CopyReferencedDocuments(CopyReferencedDocumentsRequest) returns(RequestResult);
+}
+
+message GetAllResponse{
+  repeated Design designs = 1;
+}
+
+message OpenRequest{
+  string filepath = 1;
+  map<string,bool> import_options = 2;
+}
+
+message NewRequest{
+  string name = 1;
+}
+
+message SaveAsRequest{
+  string filepath = 1;
+}
+
+message InsertRequest{
+  string filepath = 1;
+}
+
+message GetAsJsonRequest {
+  string id=1;
+}
+message GetAsJsonResponse {
+  string json=1;
+}
+
+message CopyReferencedDocumentsRequest {
+  EntityIdentifier document_id = 1;
+  string output_path=2;
+}

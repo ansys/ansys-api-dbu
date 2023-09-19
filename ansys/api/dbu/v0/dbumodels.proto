@@ -1,0 +1,82 @@
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+syntax = "proto3";
+package ansys.api.dbu.v0;
+
+option csharp_namespace = "Ansys.Api.Dbu.V0";
+
+message EntityIdentifier{
+  string id=1;
+}
+
+//
+// A driving dimension.
+message DrivingDimension {
+  string id = 1;
+  string name = 2;
+  DimensionType dimension_type = 3;
+  double dimension_value = 4;
+}
+
+//
+// A design document.
+message Design{
+  string id = 1;
+  bool is_complete=2 ;  
+  bool is_locked=3  ;   
+  bool is_modified=4;   
+  bool is_removed = 5;  
+  EntityIdentifier main_part=6;   
+  bool main_part_displays_file_name=7; 
+  string path = 10;
+  string name=11;
+}
+
+//
+// The type of dimension.
+enum DimensionType {
+  DIMENSIONTYPE_UNKNOWN = 0;
+  DIMENSIONTYPE_LINEAR = 1;
+  DIMENSIONTYPE_DIAMETRIC = 2;
+  DIMENSIONTYPE_RADIAL = 3;
+  DIMENSIONTYPE_ARC = 4;
+  DIMENSIONTYPE_AREA = 5;
+  DIMENSIONTYPE_VOLUME = 6;
+  DIMENSIONTYPE_MASS = 7;
+  DIMENSIONTYPE_ANGULAR = 8;
+  DIMENSIONTYPE_COUNT = 9;
+  DIMENSIONTYPE_UNITLESS = 10;
+}
+
+enum ImageFormat {
+  IMAGEFORMAT_PNG = 0;
+  IMAGEFORMAT_JPEG = 1;
+}
+
+enum WindowView {
+  WINDOWVIEW_TOP = 0;
+  WINDOWVIEW_BOTTOM = 1;
+  WINDOWVIEW_LEFT = 2;
+  WINDOWVIEW_RIGHT = 3;
+  WINDOWVIEW_FRONT = 4;
+  WINDOWVIEW_BACK = 5;
+  WINDOWVIEW_ISOMETRIC = 6;
+  WINDOWVIEW_TRIMETRIC = 7;
+  WINDOWVIEW_FIT = 8;
+}
+
+enum PartExportFormat {
+  PARTEXPORTFORMAT_ACIS_TEXT = 0;
+  PARTEXPORTFORMAT_ACIS_BINARY = 1;
+  PARTEXPORTFORMAT_PARASOLID_TEXT = 2;
+  PARTEXPORTFORMAT_PARASOLID_BINARY = 3;
+  PARTEXPORTFORMAT_STEP = 4;
+  PARTEXPORTFORMAT_FMD = 5;
+  PARTEXPORTFORMAT_IGES = 6;
+  PARTEXPORTFORMAT_PMDB = 7;
+}
+
+message RequestResult{
+  bool success = 1;
+  string error_message = 2;
+  string internal_error = 3;
+}
