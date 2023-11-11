@@ -31,6 +31,8 @@ service Designs{
   rpc GetAsJson(GetAsJsonRequest) returns(GetAsJsonResponse);
 
   rpc CopyReferencedDocuments(CopyReferencedDocumentsRequest) returns(RequestResult);
+
+  rpc SaveWithoutResults(google.protobuf.Empty) returns (google.protobuf.Empty);
 }
 
 message GetAllResponse{
