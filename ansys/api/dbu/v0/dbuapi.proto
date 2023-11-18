@@ -31,7 +31,7 @@ message SetVersionResponse{
 
 enum ApiVersion {
   INVALID = 0;
-  V_21 = 21; //DEPRECATED
+  V_21 = 21; //DEPRECATED in v251
   V_22 = 22;
   V_231 = 231;
   V_232 = 232;
