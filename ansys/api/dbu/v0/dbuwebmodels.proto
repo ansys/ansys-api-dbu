@@ -1,0 +1,57 @@
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+syntax = "proto3";
+package ansys.api.dbu.v0;
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Ansys.Api.Dbu.V0";
+
+// A generic object identifier.
+message ObjectIdentifier{
+  string id=1;
+}
+
+//
+// A Discovery session's host.
+message SessionHost {
+  ObjectIdentifier id = 1;
+  string name = 2;
+  SessionHostStatus status = 3;
+  google.protobuf.Timestamp idle_time = 4;
+}
+
+//
+// The host's status.
+enum SessionHostStatus {
+  HOSTSTATUS_UNKNOWN = 0;
+  HOSTSTATUS_OFF = 1;
+  HOSTSTATUS_BUSY = 2;
+  HOSTSTATUS_IDLE = 3;
+  HOSTSTATUS_NOT_RESPONDING = 4;
+}
+
+//
+// A Discovery session.
+message Session
+{
+  ObjectIdentifier id = 1;
+  string name = 2;
+  SessionStatus status = 3;
+  google.protobuf.Timestamp idle_time = 4;
+}
+
+//
+// The Discovery session's status.
+enum SessionStatus {
+  SESSIONSTATUS_UNKNOWN = 0;
+  SESSIONSTATUS_NOT_STARTED = 1;
+  SESSIONSTATUS_LOADING = 2;
+  SESSIONSTATUS_NOT_RESPONDING = 3;
+  SESSIONSTATUS_ONLINE = 4;
+}
+
+message User{
+  ObjectIdentifier id = 1;
+  string name = 2;
+  string uri = 3;
+}
