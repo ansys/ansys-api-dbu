@@ -1,0 +1,25 @@
+// Copyright 2023, ANSYS Inc. Unauthorized use, distribution or duplication is prohibited.
+syntax = "proto3";
+
+package ansys.api.dbu.v0.sessionmanager;
+
+import "ansys/api/dbu/v0/dbuwebmodels.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Ansys.Api.Dbu.V0.SessionManager";
+
+service SessionManager{
+  rpc Start(google.protobuf.Empty) returns(StartResponse);
+
+  rpc Stop(Session) returns(google.protobuf.Empty) ;
+}
+
+message StartRequest{
+  User user = 1;
+  string opening_document = 2;
+}
+
+message StartResponse{
+  SessionHost host = 1; 
+  Session session_object = 2;
+}
