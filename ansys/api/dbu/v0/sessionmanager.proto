@@ -9,7 +9,7 @@ import "google/protobuf/empty.proto";
 option csharp_namespace = "Ansys.Api.Dbu.V0.SessionManager";
 
 service SessionManager{
-  rpc Start(google.protobuf.Empty) returns(StartResponse);
+  rpc Start(StartRequest) returns(StartResponse);
 
   rpc Stop(Session) returns(google.protobuf.Empty) ;
 }
