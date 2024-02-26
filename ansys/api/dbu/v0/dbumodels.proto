@@ -80,3 +80,10 @@ message RequestResult{
   string error_message = 2;
   string internal_error = 3;
 }
+
+message VersionIdentifier
+{
+  int32 major_release = 1;
+  int32 minor_release = 2;
+  int32 service_pack = 3;
+}

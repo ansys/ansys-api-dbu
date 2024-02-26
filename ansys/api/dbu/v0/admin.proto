@@ -2,6 +2,7 @@
 syntax = "proto3";
 package ansys.api.dbu.v0.admin;
 
+import "ansys/api/dbu/v0/dbumodels.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
@@ -81,4 +82,5 @@ message SetApplicationTitleRequest{
 
 message GetBackendResponse{
   BackendType type = 1;
+  VersionIdentifier version = 2;
 }
