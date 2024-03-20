@@ -18,6 +18,8 @@ message SessionHost {
   string name = 2;
   SessionHostStatus status = 3;
   google.protobuf.Timestamp idle_time = 4;
+  string address = 5;
+  int32 port = 6;
 }
 
 //
@@ -38,6 +40,8 @@ message Session
   string name = 2;
   SessionStatus status = 3;
   google.protobuf.Timestamp idle_time = 4;
+  string address = 5;
+  int32 port = 6;
 }
 
 //
