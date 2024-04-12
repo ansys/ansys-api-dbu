@@ -24,6 +24,8 @@ service Admin{
   rpc CloseApplication(google.protobuf.Empty) returns(google.protobuf.Empty);
 
   rpc GetBackend(google.protobuf.Empty) returns(GetBackendResponse);
+
+  rpc ApplicationStarted(google.protobuf.Empty) returns(ApplicationStartedResponse);
 }
 
 enum LogsTarget{
@@ -83,4 +85,8 @@ message SetApplicationTitleRequest{
 message GetBackendResponse{
   BackendType type = 1;
   VersionIdentifier version = 2;
+}
+
+message ApplicationStartedResponse{
+  bool is_startup_complete = 1;
 }
