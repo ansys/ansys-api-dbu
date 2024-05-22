@@ -87,3 +87,9 @@ message VersionIdentifier
   int32 minor_release = 2;
   int32 service_pack = 3;
 }
+
+enum MonikerCompressionMethod {
+  MONIKERCOMPRESSIONMETHOD_FULL = 0;
+  MONIKERCOMPRESSIONMETHOD_COMPRESSED = 1;
+  MONIKERCOMPRESSIONMETHOD_OBJECT_PATH = 2;
+}
