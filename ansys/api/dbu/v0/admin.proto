@@ -26,6 +26,10 @@ service Admin{
   rpc GetBackend(google.protobuf.Empty) returns(GetBackendResponse);
 
   rpc ApplicationStarted(google.protobuf.Empty) returns(ApplicationStartedResponse);
+  
+  rpc SetMonikersCompressionMethod(MonikerCompressionMethodMessage) returns(google.protobuf.Empty);
+
+  rpc GetMonikersCompressionMethod(google.protobuf.Empty) returns(MonikerCompressionMethodMessage);
 }
 
 enum LogsTarget{
@@ -89,4 +93,8 @@ message GetBackendResponse{
 
 message ApplicationStartedResponse{
   bool is_startup_complete = 1;
+}
+
+message MonikerCompressionMethodMessage{
+  MonikerCompressionMethod method = 1;
 }
