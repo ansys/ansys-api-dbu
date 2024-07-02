@@ -33,6 +33,8 @@ service Designs{
   rpc CopyReferencedDocuments(CopyReferencedDocumentsRequest) returns(RequestResult);
 
   rpc SaveWithoutResults(google.protobuf.Empty) returns (google.protobuf.Empty);
+
+  rpc OpenCloudFileFromUrl(OpenCloudFileFromUrlRequest) returns(google.protobuf.Empty);
 }
 
 message GetAllResponse{
@@ -66,4 +68,9 @@ message GetAsJsonResponse {
 message CopyReferencedDocumentsRequest {
   EntityIdentifier document_id = 1;
   string output_path=2;
+}
+
+message OpenCloudFileFromUrlRequest{
+  string url_filepath = 1;
+  string user_id = 2;
 }
