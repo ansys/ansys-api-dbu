@@ -68,7 +68,7 @@ jobs:
       contents: write
     steps:
       - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v6
+        uses: ansys/actions/release-pypi-public@v7
         with:
           library-name: "ansys-api-dbu"
           use-trusted-publisher: true
