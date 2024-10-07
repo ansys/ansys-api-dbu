@@ -10,7 +10,7 @@ on:
       - main
       
 env:
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.11'
 
 jobs:
   build:
@@ -46,8 +46,6 @@ jobs:
           cd tmp
           python -c "import ansys.api.dbu.v0; print('Successfully imported ansys.api.dbu.v0')"
           python -c "from ansys.api.dbu import __version__; print(__version__)"
-          python -c "import ansys.api.dbu.v0; print('Successfully imported ansys.api.dbu.v0')"
-          python -c "from ansys.api.dbu import __version__; print(__version__)"
 
       - name: Upload packages
         uses: actions/upload-artifact@v4
@@ -68,7 +66,7 @@ jobs:
       contents: write
     steps:
       - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v6
+        uses: ansys/actions/release-pypi-public@v7
         with:
           library-name: "ansys-api-dbu"
           use-trusted-publisher: true
