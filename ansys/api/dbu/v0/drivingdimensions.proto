@@ -15,6 +15,10 @@ service DrivingDimensions{
 
   // Upates a driving dimension.
   rpc Update(UpdateRequest) returns(DrivingDimension);
+
+  // Update a driving dimension and return a update message
+  rpc UpdateParameter(UpdateRequest) returns(UpdateResponse);
+
 }
 
 message GetAllRequest{
@@ -30,4 +34,16 @@ message GetAllResponse{
 message UpdateRequest{
   // The driving dimension to update.
   DrivingDimension driving_dimension = 1;
+}
+
+message UpdateResponse{
+  // The driving dimension to update.
+  UpdateStatus status  = 1;
+}
+
+/// Represents the result of an update operation for a driving dimension.
+enum UpdateStatus {
+  SUCCESS = 0;
+  FAILURE = 1;
+  CONSTRAINED_PARAMETERS = 2;
 }
