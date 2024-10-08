@@ -72,5 +72,4 @@ message CopyReferencedDocumentsRequest {
 
 message OpenCloudFileFromUrlRequest{
   string url_filepath = 1;
-  string user_id = 2;
 }
