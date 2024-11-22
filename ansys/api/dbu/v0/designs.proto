@@ -35,6 +35,9 @@ service Designs{
   rpc SaveWithoutResults(google.protobuf.Empty) returns (google.protobuf.Empty);
 
   rpc OpenCloudFileFromUrl(OpenCloudFileFromUrlRequest) returns(google.protobuf.Empty);
+
+  rpc SaveCloudFile(google.protobuf.Empty) returns(google.protobuf.Empty);
+
 }
 
 message GetAllResponse{
