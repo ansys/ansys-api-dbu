@@ -27,7 +27,9 @@ message RunScriptFileRequest{
   // map of argument names to values.
   map<string,string> script_args = 2;
   // The api version to be used to run the script
-  int32 api_version = 3;
+  int32 api_version = 3;  
+  // Set the type of run script file to called
+  RunScriptType script_type = 4;
 }
 
 message RunScriptFileResponse{
@@ -59,4 +61,11 @@ message RunCommandRequest{
 message RunCommandResponse{
   // Data returned from command.
   string data = 1;
+}
+
+//
+// The kind of RunScriptFile to be called
+enum RunScriptType {
+  RUN = 0;
+  DEBUG = 1;
 }
