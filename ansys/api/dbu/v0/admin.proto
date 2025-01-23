@@ -48,9 +48,6 @@ enum BackendType{
   SPACECLAIM = 1;
   WINDOWS_DMS = 2;
   LINUX_DMS = 3;
-  CORE_SERVICE_WINDOWS = 4;
-  CORE_SERVICE_LINUX = 5;
-  DISCOVERY_HEADLESS = 6;
 }
 
 message LogsRequest{
