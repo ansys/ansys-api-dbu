@@ -38,8 +38,6 @@ service Designs{
 
   rpc SaveCloudFile(google.protobuf.Empty) returns(google.protobuf.Empty);
 
-  rpc DownloadExportFile(DownloadExportFileRequest) returns (DownloadExportFileResponse);  
-
 }
 
 message GetAllResponse{
@@ -77,12 +75,4 @@ message CopyReferencedDocumentsRequest {
 
 message OpenCloudFileFromUrlRequest{
   string url_filepath = 1;
-}
-
-message DownloadExportFileRequest{
-  PartExportFormat format = 1;
-}
-
-message DownloadExportFileResponse {
-  bytes data=1;
 }
