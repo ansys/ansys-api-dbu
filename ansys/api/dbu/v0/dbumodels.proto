@@ -8,6 +8,20 @@ message EntityIdentifier{
   string id=1;
 }
 
+message PhysicsEntityIdentifier{
+  string guid = 1;
+}
+
+// Defines the type of location, some conditions support application to either bodies and faces
+enum LocationType {
+  FACE = 0;
+  BODY = 1;
+  BOLT = 2;
+  SPRING = 3;
+  BEAM = 4;
+  WELD = 5;
+}
+
 //
 // A driving dimension.
 message DrivingDimension {
