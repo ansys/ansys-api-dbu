@@ -40,6 +40,7 @@ service Designs{
   
   rpc DownloadExportFile(DownloadExportFileRequest) returns (DownloadExportFileResponse);  
 
+  rpc StreamDownloadExportFile(DownloadExportFileRequest) returns (stream DownloadExportFileResponse);
 }
 
 message GetAllResponse{
