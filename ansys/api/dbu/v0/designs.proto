@@ -50,6 +50,7 @@ message GetAllResponse{
 message OpenRequest{
   string filepath = 1;
   map<string,bool> import_options = 2;
+  map<string,string> import_options_strings = 3;
 }
 
 message NewRequest{
