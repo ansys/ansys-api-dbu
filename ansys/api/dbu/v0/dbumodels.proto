@@ -31,6 +31,14 @@ message DrivingDimension {
   double dimension_value = 4;
 }
 
+message ImportOptionDefinition
+{
+  oneof option{
+    bool bool_option = 1;
+    string string_option =2;
+  }
+}
+
 //
 // A design document.
 message Design{
