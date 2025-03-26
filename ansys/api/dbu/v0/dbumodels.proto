@@ -9,7 +9,7 @@ message EntityIdentifier{
 }
 
 message PhysicsEntityIdentifier{
-  string guid = 1;
+  string guid_as_string = 1;
 }
 
 // Defines the type of location, some conditions support application to either bodies and faces
