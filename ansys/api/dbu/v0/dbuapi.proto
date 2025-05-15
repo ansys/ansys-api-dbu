@@ -33,10 +33,11 @@ enum ApiVersion {
   INVALID = 0;
   V_21 = 21; //OBSOLETE
   V_22 = 22; //OBSOLETE
-  V_231 = 231;
+  V_231 = 231; //OBSOLETE
   V_232 = 232;
   V_241 = 241;
   V_242 = 242;
   V_251 = 251;
   V_252 = 252;
+  V_261 = 261;
 }
