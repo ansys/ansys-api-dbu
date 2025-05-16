@@ -20,6 +20,7 @@ enum LocationType {
   SPRING = 3;
   BEAM = 4;
   WELD = 5;
+  EDGE = 6;
 }
 
 //
