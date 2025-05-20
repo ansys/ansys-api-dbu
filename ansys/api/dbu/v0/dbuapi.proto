@@ -34,10 +34,10 @@ enum ApiVersion {
   V_21 = 21; //OBSOLETE
   V_22 = 22; //OBSOLETE
   V_231 = 231; //OBSOLETE
-  V_232 = 232;
-  V_241 = 241;
-  V_242 = 242;
-  V_251 = 251;
+  V_232 = 232; //OBSOLETE
+  V_241 = 241; //OBSOLETE
+  V_242 = 242; //OBSOLETE
+  V_251 = 251; //OBSOLETE
   V_252 = 252;
   V_261 = 261;
 }
