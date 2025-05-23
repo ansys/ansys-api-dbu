@@ -21,6 +21,7 @@ enum LocationType {
   BEAM = 4;
   WELD = 5;
   EDGE = 6;
+  AXIS = 7;
 }
 
 //
