@@ -63,6 +63,7 @@ message SaveAsRequest{
 
 message InsertRequest{
   string filepath = 1;
+  bool import_named_selections = 2;
 }
 
 message GetAsJsonRequest {
