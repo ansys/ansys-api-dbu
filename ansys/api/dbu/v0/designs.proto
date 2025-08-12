@@ -59,6 +59,7 @@ message NewRequest{
 
 message SaveAsRequest{
   string filepath = 1;
+  bool write_body_facets = 2;
 }
 
 message InsertRequest{
@@ -84,6 +85,7 @@ message OpenCloudFileFromUrlRequest{
 
 message DownloadExportFileRequest{
   PartExportFormat format = 1;
+  bool write_body_facets = 2;
 }
 
 message DownloadExportFileResponse {
