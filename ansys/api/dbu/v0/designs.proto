@@ -41,6 +41,8 @@ service Designs{
   rpc DownloadExportFile(DownloadExportFileRequest) returns (DownloadExportFileResponse);  
 
   rpc StreamDownloadExportFile(DownloadExportFileRequest) returns (stream DownloadExportFileResponse);
+
+  rpc StreamDesignTessellation(DesignTessellationRequest) returns (stream DesignTessellationResponse);
 }
 
 message GetAllResponse{
@@ -90,4 +92,16 @@ message DownloadExportFileRequest{
 
 message DownloadExportFileResponse {
   bytes data=1;
+}
+
+message DesignTessellationRequest {
+  TessellationOptions options = 1;
+}
+
+message DesignTessellationResponseData {
+  map<string, Tessellation> face_tessellation = 1;
+}
+
+message DesignTessellationResponse {
+  map<string, DesignTessellationResponseData> body_tessellation = 1;
 }
