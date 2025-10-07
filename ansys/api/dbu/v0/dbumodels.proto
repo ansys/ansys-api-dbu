@@ -137,3 +137,18 @@ enum BodyExportFormat {
   BODYEXPORTFORMAT_PARASOLID_TEXT = 0;
   BODYEXPORTFORMAT_PARASOLID_BINARY = 1;
 }
+
+message Tessellation {
+  repeated double vertices = 1;
+  repeated int32 faces = 2;
+  int32 facecolor = 3;
+}
+
+message TessellationOptions{
+  double surface_deviation = 1;
+  double angle_deviation = 2;
+  double maximum_aspect_ratio = 3;
+  double maximum_edge_length = 4;
+  bool watertight = 5;
+  double curve_deviation = 6;
+}
