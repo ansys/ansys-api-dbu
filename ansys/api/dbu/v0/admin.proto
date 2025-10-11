@@ -92,6 +92,7 @@ message SetApplicationTitleRequest{
 message GetBackendResponse{
   BackendType type = 1;
   VersionIdentifier version = 2;
+  string backend_version_info = 3;
 }
 
 message ApplicationStartedResponse{
