@@ -120,6 +120,7 @@ message VersionIdentifier
   int32 major_release = 1;
   int32 minor_release = 2;
   int32 service_pack = 3;
+  int32 build_number = 4;
 }
 
 enum MonikerCompressionMethod {
