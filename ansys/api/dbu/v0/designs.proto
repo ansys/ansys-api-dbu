@@ -96,10 +96,13 @@ message DownloadExportFileResponse {
 
 message DesignTessellationRequest {
   TessellationOptions options = 1;
+  bool include_faces = 2;
+  bool include_edges = 3;
 }
 
 message DesignTessellationResponseData {
   map<string, Tessellation> face_tessellation = 1;
+  map<string, EdgeTessellation> edge_tessellation = 2;
 }
 
 message DesignTessellationResponse {
