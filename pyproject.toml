@@ -2,6 +2,6 @@
 requires = [
     "setuptools >= 42.0.0",
     "wheel",
-    "ansys_tools_protoc_helper>=0.4.0"
+    "ansys_tools_protoc_helper>=0.6.0"
 ]
 build-backend = "setuptools.build_meta:__legacy__"
